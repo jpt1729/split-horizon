@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyn16p2rerab7"]
+
+[ext_resource type="Texture2D" uid="uid://code7vdwtlj71" path="res://mini-games/towers-of-hanoi/3.png" id="1_j3x0g"]
+[ext_resource type="Script" path="res://mini-games/towers-of-hanoi/towers_of_hanoi.gd" id="1_we186"]
+[ext_resource type="Texture2D" uid="uid://dkwvk5m3axfg8" path="res://assets/nochar.png" id="2_bh50j"]
+[ext_resource type="Texture2D" uid="uid://bjtdhfiilxfiq" path="res://mini-games/towers-of-hanoi/2.png" id="2_ruvqu"]
+[ext_resource type="PackedScene" uid="uid://c4kxd0os4osfn" path="res://mini-games/towers-of-hanoi/disk.tscn" id="7_damca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj76h"]
+size = Vector2(122.5, 219.5)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_we186")
+
+[node name="tower_1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tower_1"]
+modulate = Color(0.0226379, 0.707563, 0.766159, 1)
+position = Vector2(162.75, 223.25)
+shape = SubResource("RectangleShape2D_cj76h")
+
+[node name="Sprite2D" type="Sprite2D" parent="tower_1"]
+position = Vector2(408, 283)
+scale = Vector2(5, 5)
+texture = ExtResource("2_bh50j")
+
+[node name="tower_2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tower_2"]
+modulate = Color(0.0226379, 0.707563, 0.766159, 1)
+position = Vector2(285, 223)
+shape = SubResource("RectangleShape2D_cj76h")
+
+[node name="Sprite2D" type="Sprite2D" parent="tower_2"]
+position = Vector2(283, 283)
+scale = Vector2(5, 5)
+texture = ExtResource("2_bh50j")
+
+[node name="tower_3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tower_3"]
+modulate = Color(0.0226379, 0.707563, 0.766159, 1)
+position = Vector2(409, 223)
+shape = SubResource("RectangleShape2D_cj76h")
+
+[node name="Sprite2D" type="Sprite2D" parent="tower_3"]
+position = Vector2(160, 281)
+scale = Vector2(5, 5)
+texture = ExtResource("2_bh50j")
+
+[node name="disk_1" parent="." instance=ExtResource("7_damca")]
+position = Vector2(162, 144)
+scale = Vector2(5, 5)
+
+[node name="disk_2" parent="." instance=ExtResource("7_damca")]
+position = Vector2(162, 266)
+scale = Vector2(5, 5)
+texture = ExtResource("2_ruvqu")
+
+[node name="disk_3" parent="." instance=ExtResource("7_damca")]
+position = Vector2(162, 205)
+scale = Vector2(5, 5)
+texture = ExtResource("1_j3x0g")

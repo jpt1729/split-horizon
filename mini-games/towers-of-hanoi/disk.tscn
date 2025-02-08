@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4kxd0os4osfn"]
+
+[ext_resource type="Script" path="res://mini-games/towers-of-hanoi/disk.gd" id="1_5i4wp"]
+[ext_resource type="Texture2D" uid="uid://bgualb3lvfr1p" path="res://mini-games/towers-of-hanoi/1.png" id="1_ejmgw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4x11m"]
+size = Vector2(24, 12)
+
+[node name="Disk" type="Sprite2D"]
+position = Vector2(0, -6)
+texture = ExtResource("1_ejmgw")
+script = ExtResource("1_5i4wp")
+
+[node name="hit_box" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
+shape = SubResource("RectangleShape2D_4x11m")

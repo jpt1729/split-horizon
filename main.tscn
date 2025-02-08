@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2lr47ultqfvy"]
+
+[ext_resource type="PackedScene" uid="uid://dyn16p2rerab7" path="res://mini-games/towers-of-hanoi/towers-of-hanoi.tscn" id="1_d3pot"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_d3pot")]
+position = Vector2(14, 9)
