@@ -1,7 +1,43 @@
-[gd_scene format=3 uid="uid://dfiha3avgq38d"]
+[gd_scene load_steps=9 format=3 uid="uid://dfiha3avgq38d"]
+
+[ext_resource type="Script" path="res://objects/levels/demo-level/demo_level.gd" id="1_1665r"]
+[ext_resource type="Texture2D" uid="uid://c7tkxosvvhklm" path="res://assets/demo-level/1138740.png" id="1_h81lu"]
+[ext_resource type="PackedScene" uid="uid://osmqr7q5wtv3" path="res://objects/levels/demo-level/towers-of-hanoi-box.tscn" id="3_vnpn8"]
+[ext_resource type="PackedScene" uid="uid://brbu6i0a03ypk" path="res://objects/player/player1.tscn" id="4_p5v7s"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_daats"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jmxpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yoad"]
+size = Vector2(1000, 40)
+
+[sub_resource type="QuadMesh" id="QuadMesh_jy7i5"]
+size = Vector2(1000, 40)
 
 [node name="Demo-level" type="Node2D"]
+script = ExtResource("1_1665r")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="1138740" type="Sprite2D" parent="."]
+position = Vector2(588.635, 331)
+scale = Vector2(0.306198, 0.306198)
+texture = ExtResource("1_h81lu")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+material = SubResource("CanvasItemMaterial_daats")
+position = Vector2(500, 431)
+physics_material_override = SubResource("PhysicsMaterial_jmxpy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_8yoad")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+mesh = SubResource("QuadMesh_jy7i5")
+
+[node name="Towers-of-hanoi-box" parent="." instance=ExtResource("3_vnpn8")]
+position = Vector2(452, 382)
+scale = Vector2(5, 5)
+
+[node name="Player1" parent="." instance=ExtResource("4_p5v7s")]
+position = Vector2(174, 393)
+scale = Vector2(5, 5)

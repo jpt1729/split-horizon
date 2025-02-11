@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://osmqr7q5wtv3"]
+
+[ext_resource type="PackedScene" uid="uid://cnuejvnbw346v" path="res://objects/interaction/interaction-area/interaction-area.tscn" id="1_6shbl"]
+[ext_resource type="Script" path="res://objects/levels/demo-level/towers_of_hanoi_box.gd" id="1_13p2s"]
+[ext_resource type="Texture2D" uid="uid://sas1sniktiuc" path="res://assets/demo-level/demo-man.png" id="3_2fwep"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x742a"]
+radius = 17.0
+
+[node name="Towers-of-hanoi-box" type="Node2D"]
+script = ExtResource("1_13p2s")
+
+[node name="Interaction-area" parent="." instance=ExtResource("1_6shbl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction-area"]
+shape = SubResource("CircleShape2D_x742a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_2fwep")

@@ -49,15 +49,15 @@ scale = Vector2(5, 5)
 texture = ExtResource("2_bh50j")
 
 [node name="disk_1" parent="." instance=ExtResource("7_damca")]
-position = Vector2(162, 144)
+position = Vector2(162, 182)
 scale = Vector2(5, 5)
 
 [node name="disk_2" parent="." instance=ExtResource("7_damca")]
-position = Vector2(162, 266)
+position = Vector2(162, 242)
 scale = Vector2(5, 5)
 texture = ExtResource("2_ruvqu")
 
 [node name="disk_3" parent="." instance=ExtResource("7_damca")]
-position = Vector2(162, 205)
+position = Vector2(162, 303)
 scale = Vector2(5, 5)
 texture = ExtResource("1_j3x0g")

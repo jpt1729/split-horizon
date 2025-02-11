@@ -16,7 +16,6 @@ func _physics_process(delta: float) -> void:
 		if !is_on_floor():
 			double_jump += 1
 		velocity.y = JUMP_VELOCITY
-		print(double_jump)
 
 	# Handle movement
 	var direction := Input.get_axis("ui_left", "ui_right")

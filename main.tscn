@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2lr47ultqfvy"]
+[gd_scene load_steps=4 format=3 uid="uid://c2lr47ultqfvy"]
 
 [ext_resource type="PackedScene" uid="uid://dyn16p2rerab7" path="res://mini-games/towers-of-hanoi/towers-of-hanoi.tscn" id="1_d3pot"]
+[ext_resource type="PackedScene" uid="uid://dfiha3avgq38d" path="res://objects/levels/demo-level/demo-level.tscn" id="2_k65kv"]
+[ext_resource type="PackedScene" uid="uid://brbu6i0a03ypk" path="res://objects/player/player1.tscn" id="3_d8snc"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource("1_d3pot")]
 position = Vector2(14, 9)
+
+[node name="Demo-level" parent="." instance=ExtResource("2_k65kv")]
+
+[node name="Player1" parent="." instance=ExtResource("3_d8snc")]
+position = Vector2(169, 410)
+scale = Vector2(5, 5)
