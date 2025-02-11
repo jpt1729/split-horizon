@@ -23,6 +23,7 @@ InteractionManager="*res://objects/interaction/InteractionManager.tscn"
 [global_group]
 
 player="players group"
+minigame=""
 
 [input]
 

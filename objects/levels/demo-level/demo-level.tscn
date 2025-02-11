@@ -1,43 +1,78 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfiha3avgq38d"]
+[gd_scene load_steps=12 format=3 uid="uid://dfiha3avgq38d"]
 
 [ext_resource type="Script" path="res://objects/levels/demo-level/demo_level.gd" id="1_1665r"]
 [ext_resource type="Texture2D" uid="uid://c7tkxosvvhklm" path="res://assets/demo-level/1138740.png" id="1_h81lu"]
 [ext_resource type="PackedScene" uid="uid://osmqr7q5wtv3" path="res://objects/levels/demo-level/towers-of-hanoi-box.tscn" id="3_vnpn8"]
 [ext_resource type="PackedScene" uid="uid://brbu6i0a03ypk" path="res://objects/player/player1.tscn" id="4_p5v7s"]
+[ext_resource type="PackedScene" uid="uid://cha3odxay0wc8" path="res://objects/power-ups/double_jump/double_jump_fruit.tscn" id="5_5ukar"]
+[ext_resource type="PackedScene" uid="uid://pwn0ub6gwyi4" path="res://GUI/main.tscn" id="5_qnc3h"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_daats"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jmxpy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yoad"]
-size = Vector2(1000, 40)
+size = Vector2(2000, 40)
 
 [sub_resource type="QuadMesh" id="QuadMesh_jy7i5"]
-size = Vector2(1000, 40)
+size = Vector2(2000, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1m02"]
+size = Vector2(20, 1000)
 
 [node name="Demo-level" type="Node2D"]
 script = ExtResource("1_1665r")
 
 [node name="1138740" type="Sprite2D" parent="."]
-position = Vector2(588.635, 331)
-scale = Vector2(0.306198, 0.306198)
+position = Vector2(396, 509)
+scale = Vector2(0.5875, 0.552729)
 texture = ExtResource("1_h81lu")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Floor" type="StaticBody2D" parent="."]
 material = SubResource("CanvasItemMaterial_daats")
-position = Vector2(500, 431)
+position = Vector2(500, 627)
 physics_material_override = SubResource("PhysicsMaterial_jmxpy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("RectangleShape2D_8yoad")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Floor"]
 mesh = SubResource("QuadMesh_jy7i5")
 
 [node name="Towers-of-hanoi-box" parent="." instance=ExtResource("3_vnpn8")]
-position = Vector2(452, 382)
+position = Vector2(462, 578)
 scale = Vector2(5, 5)
 
-[node name="Player1" parent="." instance=ExtResource("4_p5v7s")]
-position = Vector2(174, 393)
+[node name="Player1" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("4_p5v7s")]
+position = Vector2(177, 605)
 scale = Vector2(5, 5)
+camera = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 334)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(12, 213)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-1.52588e-05, -6.10352e-05)
+shape = SubResource("RectangleShape2D_d1m02")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+material = SubResource("CanvasItemMaterial_daats")
+position = Vector2(1544, 438)
+physics_material_override = SubResource("PhysicsMaterial_jmxpy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_8yoad")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3"]
+mesh = SubResource("QuadMesh_jy7i5")
+
+[node name="DoubleJumpFruit" parent="." instance=ExtResource("5_5ukar")]
+position = Vector2(305, 400)
+
+[node name="SubViewport" type="CanvasLayer" parent="."]
+
+[node name="Main" parent="SubViewport" instance=ExtResource("5_qnc3h")]

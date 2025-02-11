@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var SPEED = 300.0
-var JUMP_VELOCITY = -400.0
+var JUMP_VELOCITY = -1 * Global.jump_strength
 var double_jump = 1
 @export var camera: Camera2D
 @export var camera_follow_speed: float = 5.0 
@@ -20,7 +20,10 @@ func _physics_process(delta: float) -> void:
 	# Handle movement
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
+		if is_on_floor() or "double_jump" in Global.p1_power_ups:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = direction * SPEED / 2
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	

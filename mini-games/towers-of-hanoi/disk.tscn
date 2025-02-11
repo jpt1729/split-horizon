@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4kxd0os4osfn"]
+[gd_scene load_steps=5 format=3 uid="uid://c4kxd0os4osfn"]
 
 [ext_resource type="Script" path="res://mini-games/towers-of-hanoi/disk.gd" id="1_5i4wp"]
 [ext_resource type="Texture2D" uid="uid://bgualb3lvfr1p" path="res://mini-games/towers-of-hanoi/1.png" id="1_ejmgw"]
+[ext_resource type="AudioStream" uid="uid://bhcw0bdpvuess" path="res://assets/towers-of-hanoi/disk-click.mp3" id="3_4lofw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4x11m"]
 size = Vector2(24, 12)
@@ -15,3 +16,7 @@ script = ExtResource("1_5i4wp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
 shape = SubResource("RectangleShape2D_4x11m")
+
+[node name="click_sound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_4lofw")

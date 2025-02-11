@@ -38,6 +38,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if towers[2]["disks"] == [3,2,1]:
+		for disk in disks:
+			disk["object"].victory_animation(delta)
 		win_function.call()
 
 
@@ -69,6 +71,7 @@ func update_disk_positions() -> void:
 		for tower_i in towers.size():
 			if towers[tower_i]["object"].get_overlapping_areas().has(disk["hitbox"]):
 				if is_move_legal(disk, towers[tower_i]):
+					$click_sound.play()
 					pop_disk(disk.value)
 					towers[tower_i]["disks"].append(disk.value)
 

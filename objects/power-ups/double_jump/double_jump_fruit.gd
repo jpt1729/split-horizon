@@ -1,16 +1,17 @@
 extends Node2D
 
-@onready var hanoi = $Node2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().process_frame
-	hanoi.win_function = win_function
-	$victory.play()
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-func win_function():
-	$victory.play()
-	await get_tree().create_timer(4).timeout
-	queue_free()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if not body.is_in_group("player"):
+		return;
+	Global.add_p1_power_up("double_jump")
+	queue_free();

@@ -26,3 +26,17 @@ func _input(event):
 		else:
 			is_dragging = false
 			get_parent().drag_finish()
+			
+			
+func victory_animation(delta):
+	var tween = get_tree().create_tween()
+	
+	time_elapsed += delta * shake_speed
+	self.rotation = sin(time_elapsed) * shake_intensity
+	
+	var jump_height = 10  # Adjust for stronger jump
+	var original_position = position
+	var jump_position = original_position + Vector2(0, -jump_height)
+	
+	tween.tween_property(self, "position", jump_position, 0.1)  # Quick jump up
+	tween.tween_property(self, "position", original_position, 0.2).set_trans(Tween.TRANS_BOUNCE)  # Bounce back

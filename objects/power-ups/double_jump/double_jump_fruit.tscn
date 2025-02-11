@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cha3odxay0wc8"]
+
+[ext_resource type="Texture2D" uid="uid://jd3qnx082gda" path="res://assets/power-ups/double_jump.png" id="1_26sgl"]
+[ext_resource type="Script" path="res://objects/power-ups/double_jump/double_jump_fruit.gd" id="1_n7dd0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd66y"]
+size = Vector2(32, 32)
+
+[node name="DoubleJumpFruit" type="Node2D"]
+script = ExtResource("1_n7dd0")
+
+[node name="DoubleJump" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_26sgl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_nd66y")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

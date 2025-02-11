@@ -6,6 +6,7 @@ signal launch_game
 # Called when the node enters the scene tree for the first time.
 func play_game():
 	launch_game.emit()
+	$StaticBody2D.queue_free()
 	queue_free()
 
 func _ready():
