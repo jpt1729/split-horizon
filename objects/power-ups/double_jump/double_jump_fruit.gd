@@ -14,4 +14,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):
 		return;
 	Global.add_p1_power_up("double_jump")
+	Global.jump_strength = 600
 	queue_free();

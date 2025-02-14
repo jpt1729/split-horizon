@@ -1,36 +1,42 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfiha3avgq38d"]
+[gd_scene load_steps=16 format=3 uid="uid://dfiha3avgq38d"]
 
 [ext_resource type="Script" path="res://objects/levels/demo-level/demo_level.gd" id="1_1665r"]
-[ext_resource type="Texture2D" uid="uid://c7tkxosvvhklm" path="res://assets/demo-level/1138740.png" id="1_h81lu"]
 [ext_resource type="PackedScene" uid="uid://osmqr7q5wtv3" path="res://objects/levels/demo-level/towers-of-hanoi-box.tscn" id="3_vnpn8"]
 [ext_resource type="PackedScene" uid="uid://brbu6i0a03ypk" path="res://objects/player/player1.tscn" id="4_p5v7s"]
 [ext_resource type="PackedScene" uid="uid://cha3odxay0wc8" path="res://objects/power-ups/double_jump/double_jump_fruit.tscn" id="5_5ukar"]
 [ext_resource type="PackedScene" uid="uid://pwn0ub6gwyi4" path="res://GUI/main.tscn" id="5_qnc3h"]
+[ext_resource type="PackedScene" uid="uid://r7jqjol7kfm8" path="res://objects/enemies/basic-enemy/enemy.tscn" id="6_1fhfx"]
+[ext_resource type="PackedScene" uid="uid://bnypemugi735w" path="res://objects/levels/hanoi/background.tscn" id="6_m0ele"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_daats"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jmxpy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yoad"]
-size = Vector2(2000, 40)
+size = Vector2(10000, 40)
 
 [sub_resource type="QuadMesh" id="QuadMesh_jy7i5"]
-size = Vector2(2000, 40)
+size = Vector2(10000, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1m02"]
 size = Vector2(20, 1000)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kka4i"]
+size = Vector2(60, 60)
+
+[sub_resource type="QuadMesh" id="QuadMesh_42o1o"]
+size = Vector2(60, 60)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_e4lkv"]
+
 [node name="Demo-level" type="Node2D"]
 script = ExtResource("1_1665r")
 
-[node name="1138740" type="Sprite2D" parent="."]
-position = Vector2(396, 509)
-scale = Vector2(0.5875, 0.552729)
-texture = ExtResource("1_h81lu")
+[node name="Background" parent="." instance=ExtResource("6_m0ele")]
 
 [node name="Floor" type="StaticBody2D" parent="."]
 material = SubResource("CanvasItemMaterial_daats")
-position = Vector2(500, 627)
+position = Vector2(503, 530)
 physics_material_override = SubResource("PhysicsMaterial_jmxpy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
@@ -40,17 +46,18 @@ shape = SubResource("RectangleShape2D_8yoad")
 mesh = SubResource("QuadMesh_jy7i5")
 
 [node name="Towers-of-hanoi-box" parent="." instance=ExtResource("3_vnpn8")]
-position = Vector2(462, 578)
+position = Vector2(3161, 481)
 scale = Vector2(5, 5)
 
 [node name="Player1" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("4_p5v7s")]
-position = Vector2(177, 605)
+position = Vector2(178, 506)
 scale = Vector2(5, 5)
 camera = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 334)
 scale = Vector2(5, 5)
+offset = Vector2(0, -150)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(12, 213)
@@ -59,20 +66,27 @@ position = Vector2(12, 213)
 position = Vector2(-1.52588e-05, -6.10352e-05)
 shape = SubResource("RectangleShape2D_d1m02")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-material = SubResource("CanvasItemMaterial_daats")
-position = Vector2(1544, 438)
-physics_material_override = SubResource("PhysicsMaterial_jmxpy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource("RectangleShape2D_8yoad")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3"]
-mesh = SubResource("QuadMesh_jy7i5")
-
 [node name="DoubleJumpFruit" parent="." instance=ExtResource("5_5ukar")]
 position = Vector2(305, 400)
 
-[node name="SubViewport" type="CanvasLayer" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="Main" parent="SubViewport" instance=ExtResource("5_qnc3h")]
+[node name="Enemy" parent="." instance=ExtResource("6_1fhfx")]
+position = Vector2(1125, 457)
+scale = Vector2(5, 5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Main" parent="CanvasLayer" instance=ExtResource("5_qnc3h")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(907, 481)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_kka4i")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+mesh = SubResource("QuadMesh_42o1o")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_e4lkv")

@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Global="*res://global.gd"
 InteractionManager="*res://objects/interaction/InteractionManager.tscn"
 
+[display]
+
+window/size/resizable=false
+
 [global_group]
 
 player="players group"

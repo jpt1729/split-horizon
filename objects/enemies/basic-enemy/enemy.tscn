@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://r7jqjol7kfm8"]
+
+[ext_resource type="Script" path="res://objects/enemies/basic-enemy/enemy.gd" id="1_3nu27"]
+[ext_resource type="Texture2D" uid="uid://dkwvk5m3axfg8" path="res://assets/nochar.png" id="1_kleqv"]
+[ext_resource type="Texture2D" uid="uid://bjrje8sdpvfas" path="res://assets/enemy/basic-gun.png" id="2_ddfen"]
+[ext_resource type="PackedScene" uid="uid://c3ccaf4oq2b7h" path="res://objects/enemies/basic-enemy/bullet.tscn" id="3_i77pd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_welgk"]
+size = Vector2(21, 19)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_3nu27")
+
+[node name="Nochar" type="Sprite2D" parent="."]
+texture = ExtResource("1_kleqv")
+
+[node name="Basic-gun" type="Sprite2D" parent="."]
+position = Vector2(-10, 1)
+texture = ExtResource("2_ddfen")
+
+[node name="Bullet" parent="." instance=ExtResource("3_i77pd")]
+position = Vector2(-21, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.5, 0.5)
+shape = SubResource("RectangleShape2D_welgk")

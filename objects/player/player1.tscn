@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://objects/player/player_1.gd" id="1_d5s63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svwbr"]
+size = Vector2(9, 19)
 
 [node name="Player1" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
@@ -14,5 +15,5 @@ position = Vector2(0, -10)
 texture = ExtResource("1_byvnm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0.5, -9.5)
 shape = SubResource("RectangleShape2D_svwbr")

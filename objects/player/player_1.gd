@@ -7,6 +7,7 @@ var double_jump = 1
 @export var camera_follow_speed: float = 5.0 
 
 func _physics_process(delta: float) -> void:
+	JUMP_VELOCITY = -1 * Global.jump_strength
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	else:

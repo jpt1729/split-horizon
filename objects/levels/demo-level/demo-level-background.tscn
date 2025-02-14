@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://i3vg6rm60hob"]
+
+[ext_resource type="Texture2D" uid="uid://c7tkxosvvhklm" path="res://assets/demo-level/1138740.png" id="1_r8ndr"]
+[ext_resource type="Texture2D" uid="uid://dvdee7mhhl62b" path="res://assets/demo-level/cloud.jpg" id="2_0q3ta"]
+[ext_resource type="Texture2D" uid="uid://cpxsyvmb4yx7s" path="res://assets/demo-level/city-skyline.png" id="3_syr5w"]
+
+[node name="Demo-level-background" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.6, 0)
+
+[node name="city" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(506, 339)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_r8ndr")
+
+[node name="city2" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(506, 339)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_r8ndr")
+offset = Vector2(3542, 0)
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0)
+scroll_offset = Vector2(-34, -239)
+
+[node name="city" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(506, 339)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_0q3ta")
+
+[node name="city2" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(485, 339)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_0q3ta")
+offset = Vector2(3542, 0)
+
+[node name="city3" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(1172, 295.2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_0q3ta")
+
+[node name="city4" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(1151, 295.2)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_0q3ta")
+offset = Vector2(3542, 0)
+
+[node name="city5" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(1818, 352.2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_0q3ta")
+
+[node name="city6" type="Sprite2D" parent="Parallax2D2"]
+position = Vector2(1797, 352.2)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_0q3ta")
+offset = Vector2(3542, 0)
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+position = Vector2(508, 454)
+texture = ExtResource("3_syr5w")
