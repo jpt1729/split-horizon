@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bttpv8euvgaax"]
+[gd_scene load_steps=13 format=3 uid="uid://cf2e3ogim2fby"]
 
 [ext_resource type="Script" path="res://bird.gd" id="1_lod2f"]
 [ext_resource type="Texture2D" uid="uid://dqqc1rxi5ipo0" path="res://assets/bird/BirdSprite.png" id="2_o7nnw"]
@@ -70,6 +70,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_b5rnc"]
 
 [node name="bird" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 8
+motion_mode = 1
 script = ExtResource("1_lod2f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

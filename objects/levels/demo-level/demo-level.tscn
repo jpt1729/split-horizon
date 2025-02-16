@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://pwn0ub6gwyi4" path="res://GUI/main.tscn" id="5_qnc3h"]
 [ext_resource type="PackedScene" uid="uid://r7jqjol7kfm8" path="res://objects/enemies/basic-enemy/enemy.tscn" id="6_1fhfx"]
 [ext_resource type="PackedScene" uid="uid://bnypemugi735w" path="res://objects/levels/hanoi/background.tscn" id="6_m0ele"]
-[ext_resource type="PackedScene" uid="uid://bttpv8euvgaax" path="res://bird.tscn" id="8_8w14y"]
+[ext_resource type="PackedScene" uid="uid://cf2e3ogim2fby" path="res://bird.tscn" id="8_8w14y"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_daats"]
 
@@ -29,6 +29,9 @@ size = Vector2(60, 60)
 size = Vector2(60, 60)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_e4lkv"]
+vertices = PackedVector2Array(947, 521, 1762.86, 648.961, 9.03906, 643.031, 867, 521, 1754.13, 9.96094, 947, 441, 11.9531, 4.03125, 867, 441)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 1, 0, 5), PackedInt32Array(6, 4, 5, 7), PackedInt32Array(2, 6, 7, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(2, -6, 1764, 0, 1773, 659, -1, 653)])
 
 [node name="Demo-level" type="Node2D"]
 script = ExtResource("1_1665r")
@@ -75,6 +78,7 @@ position = Vector2(305, 400)
 [node name="Enemy" parent="." instance=ExtResource("6_1fhfx")]
 position = Vector2(1125, 457)
 scale = Vector2(5, 5)
+collision_layer = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -95,6 +99,6 @@ position = Vector2(0, 1)
 navigation_polygon = SubResource("NavigationPolygon_e4lkv")
 
 [node name="bird" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("8_8w14y")]
-position = Vector2(147, 407)
+position = Vector2(147, 400)
 scale = Vector2(2.71482, 2.65375)
 target_to_chase = NodePath("../Player1")
