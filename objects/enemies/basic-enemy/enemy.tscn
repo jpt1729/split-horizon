@@ -9,18 +9,22 @@
 size = Vector2(21, 19)
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_3nu27")
 
 [node name="Nochar" type="Sprite2D" parent="."]
 texture = ExtResource("1_kleqv")
 
 [node name="Basic-gun" type="Sprite2D" parent="."]
-position = Vector2(-10, 1)
+position = Vector2(-10, -1)
 texture = ExtResource("2_ddfen")
 
 [node name="Bullet" parent="." instance=ExtResource("3_i77pd")]
-position = Vector2(-21, -1)
+position = Vector2(-20, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5.5, 0.5)
 shape = SubResource("RectangleShape2D_welgk")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
