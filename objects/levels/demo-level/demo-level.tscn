@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfiha3avgq38d"]
+[gd_scene load_steps=17 format=3 uid="uid://dfiha3avgq38d"]
 
 [ext_resource type="Script" path="res://objects/levels/demo-level/demo_level.gd" id="1_1665r"]
 [ext_resource type="PackedScene" uid="uid://osmqr7q5wtv3" path="res://objects/levels/demo-level/towers-of-hanoi-box.tscn" id="3_vnpn8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://pwn0ub6gwyi4" path="res://GUI/main.tscn" id="5_qnc3h"]
 [ext_resource type="PackedScene" uid="uid://r7jqjol7kfm8" path="res://objects/enemies/basic-enemy/enemy.tscn" id="6_1fhfx"]
 [ext_resource type="PackedScene" uid="uid://bnypemugi735w" path="res://objects/levels/hanoi/background.tscn" id="6_m0ele"]
+[ext_resource type="PackedScene" uid="uid://bttpv8euvgaax" path="res://bird.tscn" id="8_8w14y"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_daats"]
 
@@ -46,7 +47,7 @@ shape = SubResource("RectangleShape2D_8yoad")
 mesh = SubResource("QuadMesh_jy7i5")
 
 [node name="Towers-of-hanoi-box" parent="." instance=ExtResource("3_vnpn8")]
-position = Vector2(3161, 481)
+position = Vector2(3157, 476)
 scale = Vector2(5, 5)
 
 [node name="Player1" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("4_p5v7s")]
@@ -78,6 +79,7 @@ scale = Vector2(5, 5)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Main" parent="CanvasLayer" instance=ExtResource("5_qnc3h")]
+scale = Vector2(1, 1.00371)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(907, 481)
@@ -89,4 +91,10 @@ shape = SubResource("RectangleShape2D_kka4i")
 mesh = SubResource("QuadMesh_42o1o")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(0, 1)
 navigation_polygon = SubResource("NavigationPolygon_e4lkv")
+
+[node name="bird" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("8_8w14y")]
+position = Vector2(147, 407)
+scale = Vector2(2.71482, 2.65375)
+target_to_chase = NodePath("../Player1")
