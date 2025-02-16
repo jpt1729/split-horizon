@@ -8,6 +8,17 @@
 [ext_resource type="PackedScene" uid="uid://r7jqjol7kfm8" path="res://objects/enemies/basic-enemy/enemy.tscn" id="6_1fhfx"]
 [ext_resource type="PackedScene" uid="uid://bnypemugi735w" path="res://objects/levels/hanoi/background.tscn" id="6_m0ele"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_e4lkv"]
+vertices = PackedVector2Array(947, 521, 1762.86, 648.961, 9.03906, 643.031, 867, 521, 1754.13, 9.96094, 947, 441, 11.9531, 4.03125, 867, 441)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 1, 0, 5), PackedInt32Array(6, 4, 5, 7), PackedInt32Array(2, 6, 7, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(2, -6, 1764, 0, 1773, 659, -1, 653)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kka4i"]
+size = Vector2(60, 60)
+
+[sub_resource type="QuadMesh" id="QuadMesh_42o1o"]
+size = Vector2(60, 60)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_daats"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jmxpy"]
@@ -21,18 +32,22 @@ size = Vector2(10000, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1m02"]
 size = Vector2(20, 1000)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kka4i"]
-size = Vector2(60, 60)
-
-[sub_resource type="QuadMesh" id="QuadMesh_42o1o"]
-size = Vector2(60, 60)
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_e4lkv"]
-
 [node name="Demo-level" type="Node2D"]
 script = ExtResource("1_1665r")
 
 [node name="Background" parent="." instance=ExtResource("6_m0ele")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_e4lkv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D"]
+position = Vector2(907, 481)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_kka4i")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="NavigationRegion2D/StaticBody2D"]
+mesh = SubResource("QuadMesh_42o1o")
 
 [node name="Floor" type="StaticBody2D" parent="."]
 material = SubResource("CanvasItemMaterial_daats")
@@ -71,22 +86,15 @@ position = Vector2(305, 400)
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="Enemy" parent="." instance=ExtResource("6_1fhfx")]
+[node name="Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_1fhfx")]
 position = Vector2(1125, 457)
 scale = Vector2(5, 5)
+target = NodePath("../Player1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Main" parent="CanvasLayer" instance=ExtResource("5_qnc3h")]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(907, 481)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_kka4i")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
-mesh = SubResource("QuadMesh_42o1o")
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_e4lkv")
+[node name="Towers-of-hanoi-box2" parent="." instance=ExtResource("3_vnpn8")]
+position = Vector2(1588, 472)
+scale = Vector2(5, 5)
