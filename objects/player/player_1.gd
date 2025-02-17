@@ -5,6 +5,7 @@ var JUMP_VELOCITY = -1 * Global.jump_strength
 var double_jump = 1
 @export var camera: Camera2D
 @export var camera_follow_speed: float = 5.0 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	JUMP_VELOCITY = -1 * Global.jump_strength
@@ -19,7 +20,25 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	# Handle movement
+	# Get the input direction (-1, 0, 1)
 	var direction := Input.get_axis("ui_left", "ui_right")
+	
+	#Flipping the Sprite :p
+	if direction > 0:
+		animated_sprite.flip_h = false
+	elif direction < 0: 
+		animated_sprite.flip_h = true
+	
+	#animations :D
+	if is_on_floor():
+		if direction == 0:
+			animated_sprite.play("idle")
+		else:
+			animated_sprite.play("run")
+	else:
+		animated_sprite.play("jump")
+	
+	
 	if direction:
 		if is_on_floor() or "double_jump" in Global.p1_power_ups:
 			velocity.x = direction * SPEED
