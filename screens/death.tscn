@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://c055xhi4b5rj7"]
+
+[ext_resource type="Texture2D" uid="uid://4iomrukaugv6" path="res://assets/screens/death.png" id="1_732vl"]
+
+[node name="Death" type="Control"]
+z_index = 100
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 1191.0
+offset_bottom = 682.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 397.0
+offset_top = 150.0
+offset_right = 710.0
+offset_bottom = 463.0
+texture = ExtResource("1_732vl")

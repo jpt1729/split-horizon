@@ -14,7 +14,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(2, -6, 1764, 0, 1773, 659, -1, 653)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kka4i"]
-size = Vector2(60, 60)
+size = Vector2(151, 60)
 
 [sub_resource type="QuadMesh" id="QuadMesh_42o1o"]
 size = Vector2(60, 60)
@@ -60,10 +60,6 @@ shape = SubResource("RectangleShape2D_8yoad")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Floor"]
 mesh = SubResource("QuadMesh_jy7i5")
 
-[node name="Towers-of-hanoi-box" parent="." instance=ExtResource("3_vnpn8")]
-position = Vector2(3161, 481)
-scale = Vector2(5, 5)
-
 [node name="Player1" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("4_p5v7s")]
 position = Vector2(178, 506)
 scale = Vector2(5, 5)
@@ -91,10 +87,45 @@ position = Vector2(1125, 457)
 scale = Vector2(5, 5)
 target = NodePath("../Player1")
 
+[node name="Towers-of-hanoi-box" parent="." instance=ExtResource("3_vnpn8")]
+position = Vector2(2390, 257)
+scale = Vector2(5, 5)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Main" parent="CanvasLayer" instance=ExtResource("5_qnc3h")]
+z_as_relative = true
 
-[node name="Towers-of-hanoi-box2" parent="." instance=ExtResource("3_vnpn8")]
-position = Vector2(1588, 472)
-scale = Vector2(5, 5)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1941, 477)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_kka4i")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+position = Vector2(-0.999924, 0)
+scale = Vector2(2.53333, 1)
+mesh = SubResource("QuadMesh_42o1o")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(2117, 388)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_kka4i")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3"]
+position = Vector2(0.500017, 0)
+scale = Vector2(2.51667, 1)
+mesh = SubResource("QuadMesh_42o1o")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(2304, 318)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(45.5, 0)
+shape = SubResource("RectangleShape2D_kka4i")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D4"]
+position = Vector2(46, 0)
+scale = Vector2(2.53333, 1)
+mesh = SubResource("QuadMesh_42o1o")

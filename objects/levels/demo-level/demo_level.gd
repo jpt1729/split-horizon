@@ -1,11 +1,15 @@
 extends Node2D
 
 var game = preload("res://objects/levels/demo-level/hanoi-game.tscn")
+var death = preload("res://screens/death.tscn")
 var minigame_scene
 
 func _ready():
 	$"Towers-of-hanoi-box".launch_game.connect(play_towers_of_hanoi)
-	
+
+func _process(delta: float) -> void:
+	if Global.p1_health == 0:
+		$CanvasLayer.add_child(death.instantiate())
 func close_towers_of_hanoi():
 	if minigame_scene and is_instance_valid(minigame_scene):
 		minigame_scene.queue_free() 

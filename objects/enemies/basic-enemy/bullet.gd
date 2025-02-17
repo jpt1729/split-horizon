@@ -18,5 +18,7 @@ func _physics_process(delta: float) -> void:
 
 	if collision:
 		if (collision.get_collider().is_in_group("player")):
-			Global.p1_health -= bullet_damage
+			Global.decrease_p1_health(bullet_damage)
+			$AudioStreamPlayer2D.playing = true
+			
 		queue_free()
