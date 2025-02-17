@@ -95,6 +95,7 @@ scale = Vector2(5, 5)
 position = Vector2(1588, 472)
 scale = Vector2(5, 5)
 
-[node name="Player1" parent="." instance=ExtResource("4_p5v7s")]
+[node name="Player1" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("4_p5v7s")]
 position = Vector2(256, 459)
 scale = Vector2(-3.12, 3.12)
+camera = NodePath("../Camera2D")
