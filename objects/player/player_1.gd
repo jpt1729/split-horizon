@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
-var SPEED = 300.0
+var SPEED = Global.player_speed
 var JUMP_VELOCITY = -1 * Global.jump_strength
 var double_jump = 1
 @export var camera: Camera2D
 @export var camera_follow_speed: float = 5.0 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	Global.p1 = self
 
 func _physics_process(delta: float) -> void:
 	JUMP_VELOCITY = -1 * Global.jump_strength

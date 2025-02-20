@@ -4,8 +4,8 @@ var game = preload("res://objects/levels/demo-level/hanoi-game.tscn")
 var minigame_scene
 
 func _ready():
-	$"Towers-of-hanoi-box".launch_game.connect(play_towers_of_hanoi)
-	
+	#$"Towers-of-hanoi-box".launch_game.connect(play_towers_of_hanoi)
+	pass
 func close_towers_of_hanoi():
 	if minigame_scene and is_instance_valid(minigame_scene):
 		minigame_scene.queue_free() 
