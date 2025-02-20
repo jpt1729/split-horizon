@@ -19,6 +19,6 @@ scroll_scale = Vector2(0.6, 1)
 scroll_offset = Vector2(145, 185)
 
 [node name="Tran-quoc-pagoda" type="Sprite2D" parent="skyline"]
-position = Vector2(-16, 249)
-scale = Vector2(2, 2)
+position = Vector2(101, 227)
+scale = Vector2(3.80078, 3.86719)
 texture = ExtResource("2_hoo7n")
