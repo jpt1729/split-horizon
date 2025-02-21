@@ -11,6 +11,8 @@ func _ready() -> void:
 	Global.p1 = self
 
 func _physics_process(delta: float) -> void:
+	if Global.screen_locked:
+		return;
 	JUMP_VELOCITY = -1 * Global.jump_strength
 	if not is_on_floor():
 		velocity += get_gravity() * delta

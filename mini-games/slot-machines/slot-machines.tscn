@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://qphm0ad4vlr4"]
+
+[ext_resource type="Texture2D" uid="uid://d2j1f3w2pl6hs" path="res://assets/slot-machine/circle.png" id="1_1tv3r"]
+[ext_resource type="Script" path="res://mini-games/slot-machines/slot_machines.gd" id="1_5xuom"]
+[ext_resource type="Texture2D" uid="uid://cbexllll4oiss" path="res://assets/slot-machine/square.png" id="2_p4kqo"]
+[ext_resource type="Texture2D" uid="uid://1h0c8pbyvfr6" path="res://assets/slot-machine/triangle.png" id="3_prvw1"]
+[ext_resource type="AudioStream" uid="uid://ciwd0mlusknqc" path="res://assets/slot-machine/running.mp3" id="5_xlp7b"]
+[ext_resource type="AudioStream" uid="uid://b4isq4lnf1hb2" path="res://assets/slot-machine/victory.mp3" id="6_twwts"]
+
+[node name="Slot-machines" type="Node2D"]
+position = Vector2(576, 323)
+scale = Vector2(3, 3)
+script = ExtResource("1_5xuom")
+
+[node name="slot_1" type="Sprite2D" parent="."]
+position = Vector2(-96, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("1_1tv3r")
+
+[node name="slot_2" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_p4kqo")
+
+[node name="slot_3" type="Sprite2D" parent="."]
+position = Vector2(96, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("3_prvw1")
+
+[node name="running" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xlp7b")
+
+[node name="victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_twwts")

@@ -8,6 +8,8 @@ var p1_respawn_point = Vector2()
 var jump_strength = 400
 var player_speed = 500
 
+var screen_locked = false
+
 func add_p1_power_up(power_up):
 	p1_power_ups.push_back(power_up)
 

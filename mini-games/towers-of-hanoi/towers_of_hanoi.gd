@@ -34,12 +34,14 @@ var win_function: Callable = func(): pass
 	]
 
 func _ready() -> void:
+	Global.screen_locked = true
 	move_towers()
 
 func _process(delta: float) -> void:
 	if towers[2]["disks"] == [3,2,1]:
 		for disk in disks:
 			disk["object"].victory_animation(delta)
+		Global.screen_locked = false
 		win_function.call()
 
 
