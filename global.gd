@@ -12,8 +12,8 @@ func add_p1_power_up(power_up):
 	p1_power_ups.push_back(power_up)
 
 func _process(_delta) -> void:
-	
 	if p1_health <= 0:
 		if p1:
 			p1.global_position = p1_respawn_point
 			p1_health = 5
+			print('respawning!')

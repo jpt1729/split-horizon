@@ -1,0 +1,156 @@
+[gd_scene load_steps=23 format=3 uid="uid://bhp45s0vhq4dr"]
+
+[ext_resource type="Texture2D" uid="uid://un7h5bht2m1h" path="res://assets/particles/Leaves-Sheet.png" id="1_eol8g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nyy4"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unlht"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyhj5"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwlh1"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rnyu"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(0, 150, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6lan"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(150, 150, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r4hs"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(300, 150, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwhnj"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(450, 150, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7e0q"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(0, 300, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wjvi"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(150, 300, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y32l"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(300, 300, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi8d1"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(450, 300, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa0q2"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(0, 450, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8dw0"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(150, 450, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic65t"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(300, 450, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tuj1"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(450, 450, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnaq3"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(0, 600, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpv2g"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(150, 600, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eddfi"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(300, 600, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vbo6"]
+atlas = ExtResource("1_eol8g")
+region = Rect2(450, 600, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irb5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nyy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unlht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyhj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwlh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rnyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6lan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r4hs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwhnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7e0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wjvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y32l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi8d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa0q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8dw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic65t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tuj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnaq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpv2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eddfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vbo6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Leaves-effect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_irb5o")
+autoplay = "default"
+frame_progress = 0.349154

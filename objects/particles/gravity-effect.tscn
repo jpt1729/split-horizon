@@ -1,0 +1,156 @@
+[gd_scene load_steps=23 format=3 uid="uid://5ryvlloknd7i"]
+
+[ext_resource type="Texture2D" uid="uid://dn12h3tjj2f6y" path="res://assets/particles/Gravity-Sheet.png" id="1_lfgik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vtuy"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(0, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8upp"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(96, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_642n0"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(192, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsn7q"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(288, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jspt4"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(0, 80, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctvyq"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(96, 80, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t6e8"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(192, 80, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmd61"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(288, 80, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mblua"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(0, 160, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o02e1"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(96, 160, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_432un"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(192, 160, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo84e"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(288, 160, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n04hn"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(0, 240, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04fyh"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(96, 240, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evyxq"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(192, 240, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agksh"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(288, 240, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m818o"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(0, 320, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tbri"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(96, 320, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klcv8"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(192, 320, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puii3"]
+atlas = ExtResource("1_lfgik")
+region = Rect2(288, 320, 96, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6top"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vtuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8upp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_642n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsn7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jspt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctvyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t6e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmd61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mblua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o02e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_432un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo84e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n04hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04fyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evyxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agksh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m818o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tbri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klcv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puii3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Gravity-effect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_v6top")
+autoplay = "default"
+frame_progress = 0.234916

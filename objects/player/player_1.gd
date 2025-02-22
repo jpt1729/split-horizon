@@ -3,12 +3,25 @@ extends CharacterBody2D
 var SPEED = Global.player_speed
 var JUMP_VELOCITY = -1 * Global.jump_strength
 var double_jump = 1
+var health;
+var old_health;
 @export var camera: Camera2D
 @export var camera_follow_speed: float = 5.0 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	Global.p1 = self
+	health = Global.p1_health  # Initialize with global value
+	old_health = Global.p1_health
+
+func _process(delta: float) -> void:
+	if health == old_health and Global.p1_health != old_health:
+		health = Global.p1_health
+		old_health = Global.p1_health
+	if Global.p1_health == old_health and health != old_health:
+		Global.p1_health = health
+		old_health = health
+	pass
 
 func _physics_process(delta: float) -> void:
 	JUMP_VELOCITY = -1 * Global.jump_strength
